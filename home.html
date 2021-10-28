@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Flasky{% endblock %}
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello, {{ name }}!</h1>
+</div>
+
+<div>
+    <h1>Gallery List</h1>
+
+    <ul>
+        {% for galleryitem in gallery %}
+        <li><a href="{{ url_for('gallery') }}/{{galleryitem.galleryid}}">{{galleryitem.galleryname}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<a href="{{ url_for('gallery') }}">Create a Gallery</a>
+
+{% endblock %}
